@@ -1,3 +1,3 @@
 @echo off
-pip install portablemc
+pip install --user portablemc
 PAUSE

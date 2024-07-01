@@ -2,7 +2,7 @@
 setlocal
 
 rem Chemin complet vers portablemc
-set portablemc_path=%localappdata%\Programs\Python\Python312\Scripts\portablemc.exe
+set portablemc_path=%appdata%\Python\Python312\Scripts\portablemc.exe
 rem Verifie que portablemc_path est correct
 if not exist %portablemc_path% (
     echo Le chemin %portablemc_path% n'existe pas. Veuillez verifier l'installation.
