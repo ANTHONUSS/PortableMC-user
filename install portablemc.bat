@@ -1,3 +1,3 @@
 @echo off
-pip install --user portablemc
+pip install --user portablemc[certifi]
 PAUSE
