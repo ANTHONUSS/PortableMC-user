@@ -5,7 +5,7 @@ rem Chemin complet vers portablemc
 set portablemc_path=%appdata%\Python\Python39\Scripts\portablemc.exe
 
 rem Variables
-set /p email="Entrez votre email : "
+set /p pseudo="Entrez votre pseudo : "
 set /p path="Entrez le repertoire de Minecraft (la ou portablemc va stocker les donnees de Minecraft) : "
 %portablemc_path% search
 set /p ver="Entrez la version de Minecraft (Vous pouvez rajouter 'fabric:' ou 'forge:' avant le numero de version pour preciser quel modloader utiliser) : "
@@ -25,7 +25,7 @@ if not exist "%path%" (
 )
 
 rem Execute portablemc avec les arguments
-%portablemc_path% --main-dir="%path%" --work-dir="%path%" start %ver% -l="%email%" --jvm-args="-Xmx%ram%G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M"
+%portablemc_path% --main-dir="%path%" --work-dir="%path%" start %ver% -u="%pseudo%" --jvm-args="-Xmx%ram%G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M"
 
 PAUSE
 endlocal
