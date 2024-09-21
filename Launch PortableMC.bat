@@ -1,23 +1,22 @@
 @echo off
 setlocal
 
-rem complete path to portablemc
-    set portablemc_path=%appdata%\Python\Python39\Scripts\portablemc.exe
-
-rem Verification of portablemc_path
-    if not exist "%portablemc_path%" (
-        echo the path %portablemc_path% doesn't exist.
-        PAUSE
-        exit /b 1
-    ) 
-
+pip install portablemc --target="%CD%\PortableMC"
+set PYTHONPATH=%CD%\PortableMC
+set portablemc_path=PortableMC\bin\portablemc.exe
 
 rem default variables
-    set /p mc_path="Enter the Minecraft directory path you want to use : "
+    set /p mc_path="Enter the Minecraft installation directory path you want to use : "
+    set /p user_path="Enter the User directory path you want to use : "
 
     rem Verification of path
         if not exist "%mc_path%" (
             echo the path %mc_path% doesn't exist.
+            PAUSE
+            exit /b 1
+        )
+        if not exist "%user_path%" (
+            echo the path %user_path% doesn't exist.
             PAUSE
             exit /b 1
         )
@@ -47,7 +46,7 @@ rem choice if online or offline
     :end
 
 rem execute with jvm args
-    %portablemc_path% --main-dir="%mc_path%" --work-dir="%mc_path%" start %ver% %mode% --jvm-args="-Xmx%ram%G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M"
+    %portablemc_path% --main-dir="%mc_path%" --work-dir="%user_path%" start %ver% %mode% --jvm-args="-Xmx%ram%G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M"
 
 pause
 endlocal
