@@ -18,3 +18,5 @@ It supports :
 
 You also have a `PortableMC Template.bat` file.
 You can Edit it to fill the variables at your ease. With this you can launch a Minecraft instance and don't have to type all the variables at each launch.
+
+*If the script is making an error, delete the `PortableMC` folder and retry.*
