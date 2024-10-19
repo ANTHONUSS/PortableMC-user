@@ -1,6 +1,6 @@
 # PortableMC-user
 
-*works with python 3.8 to 3.12*
+*Tested with python 3.8 to 3.12*
 
 ### An user-friendly windows .bat file to install and run [portablemc](https://github.com/mindstorm38/portablemc) easily!
 
